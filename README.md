@@ -20,6 +20,10 @@ function twentyseventeen_framework_loader() {
     );
 }
 ```
+
+## Argumnets:
+`CX_Loader` accepts a single argument - array of **Cherry X** module paths, that you want to include (see example above)
+
 ## Notes:
 
 1. This class only select latest version of each module from all Cherry X framework instances loaded in current environment
