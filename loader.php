@@ -123,7 +123,11 @@ if ( ! class_exists( 'CX_Loader' ) ) {
 					$this->included_modules[ $slug ] = array(
 						'path' => trailingslashit( $dir ),
 						'url'  => trailingslashit(
-							str_replace( '\\', '/', str_replace( ABSPATH, esc_url( home_url( '/' ) ), $dir ) )
+							str_replace(
+								'\\',
+								'/',
+								str_replace( untrailingslashit( ABSPATH ), esc_url( home_url() ), $dir )
+							)
 						),
 					);
 
