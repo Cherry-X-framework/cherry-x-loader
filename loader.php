@@ -120,10 +120,14 @@ if ( ! class_exists( 'CX_Loader' ) ) {
 
 					$dir = pathinfo( $path, PATHINFO_DIRNAME );
 
+					$site_url = apply_filters( 'cx_include_module_site_url', esc_url( site_url() ) );
+
+					$abspath = apply_filters( 'cx_include_module_abspath', untrailingslashit( ABSPATH ) );
+
 					$url = str_replace(
 						'\\',
 						'/',
-						str_replace( untrailingslashit( ABSPATH ), esc_url( site_url() ), $dir )
+						str_replace( $abspath, $site_url, $dir )
 					);
 
 					$this->included_modules[ $slug ] = array(
